@@ -9,23 +9,33 @@ router.post(
 validation.categoryValidation,
 CategoryController.addCategory);
 
-router.get('/getCategory/:id', CategoryController.getCategory);
 
-router.post('/updateCategory',validation.categoryValidation,CategoryController.updateCategory);
+router.get(
+    '/getCategory/:id', 
+    CategoryController.getCategory);
+
+
+router.post(
+    '/updateCategory',
+    validation.categoryValidation,
+    CategoryController.updateCategory);
 
 router.get(
     '/deleteCategory/:id', 
     CategoryController.deleteCategory
     );
 
+
 router.get(
     '/', 
     CategoryController.getCategories
     );
 
+
 router.get(
-    '/destroyCategory', 
+    '/destroyCategory/:id', 
     CategoryController.destroyCategory
     );
 
+    
 module.exports = router;
