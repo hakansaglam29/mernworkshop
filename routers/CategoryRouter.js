@@ -1,9 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const CategoryController = require('../controllers/CategoryConroller');
+const validation = require("../middleware/validationMiddleware")
 
 
-router.post('/addCategory', CategoryController.addCategory);
+router.post(
+    '/addCategory',
+    validation.categoryValidation, 
+    CategoryController.addCategory
+    );
 
 router.get('/getCategory/:id', CategoryController.getCategory);
 
