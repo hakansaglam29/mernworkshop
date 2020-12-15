@@ -1,7 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const dbConnect = require('./models/dbConnect');
-// const router = require('./routers/router');
+const router = require('./routers/router');
 
 
 //server
@@ -17,4 +17,4 @@ dbConnect();
 
 
 app.use(express.json());
-// app.use('/api', router);
+app.use('/api', router);

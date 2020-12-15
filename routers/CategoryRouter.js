@@ -10,7 +10,9 @@ router.post(
     CategoryController.addCategory
     );
 
-router.get('/getCategory/:id', CategoryController.getCategory);
+router.get(
+    '/getCategory/:id', 
+    CategoryController.getCategory);
 
 router.post('/updateCategory', CategoryController.updateCategory);
 
